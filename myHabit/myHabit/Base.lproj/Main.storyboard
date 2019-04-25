@@ -46,7 +46,7 @@
         <!--Item 1-->
         <scene sceneID="gER-rG-2Hz">
             <objects>
-                <viewController id="Qfz-e0-A6T" sceneMemberID="viewController">
+                <viewController id="Qfz-e0-A6T" customClass="ViewController" customModule="myHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e9i-FI-3RB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,6 +174,9 @@
                         <viewLayoutGuide key="safeArea" id="AeN-Gf-26i"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="BaW-8A-I1H"/>
+                    <connections>
+                        <outlet property="collectionView" destination="yd1-lg-rWc" id="oiQ-fz-ENq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALp-wR-dqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
