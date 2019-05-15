@@ -15,6 +15,7 @@
 		8317B9A5226C964D00293E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8317B9A3226C964D00293E53 /* LaunchScreen.storyboard */; };
 		8317B9B0226C964E00293E53 /* myHabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317B9AF226C964E00293E53 /* myHabitTests.swift */; };
 		8317B9BB226C964E00293E53 /* myHabitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317B9BA226C964E00293E53 /* myHabitUITests.swift */; };
+		839DAF71228C51690043A2F3 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DAF70228C51690043A2F3 /* TopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8317B9B6226C964E00293E53 /* myHabitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myHabitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8317B9BA226C964E00293E53 /* myHabitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHabitUITests.swift; sourceTree = "<group>"; };
 		8317B9BC226C964E00293E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		839DAF70228C51690043A2F3 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				8317B997226C964D00293E53 /* AppDelegate.swift */,
 				8317B999226C964D00293E53 /* ViewController.swift */,
+				839DAF70228C51690043A2F3 /* TopViewController.swift */,
 				8317B99B226C964D00293E53 /* Main.storyboard */,
 				8317B9A1226C964D00293E53 /* Assets.xcassets */,
 				8317B9A3226C964D00293E53 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839DAF71228C51690043A2F3 /* TopViewController.swift in Sources */,
 				8317B99A226C964D00293E53 /* ViewController.swift in Sources */,
 				8317B9A0226C964D00293E53 /* myHabit.xcdatamodeld in Sources */,
 				8317B998226C964D00293E53 /* AppDelegate.swift in Sources */,

@@ -14,18 +14,44 @@
         <!--Item 2-->
         <scene sceneID="Ghq-j7-eUz">
             <objects>
-                <viewController id="vQY-Ha-zal" sceneMemberID="viewController">
+                <viewController id="vQY-Ha-zal" customClass="ViewController" customModule="myHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e03-Iv-YaJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfE-aN-0J1">
+                                <rect key="frame" x="0.0" y="20" width="375" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="yiE-Ht-38F"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-D9-9Ua">
+                                <rect key="frame" x="128" y="67" width="101" height="3"/>
+                                <color key="backgroundColor" red="0.10684507824611389" green="0.54190158932871135" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="EBa-Xn-Toa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QfE-aN-0J1" firstAttribute="leading" secondItem="dnf-Cf-cEg" secondAttribute="leading" id="CoJ-L6-NHW"/>
+                            <constraint firstItem="Amf-D9-9Ua" firstAttribute="leading" secondItem="e03-Iv-YaJ" secondAttribute="leading" constant="128" id="SJ3-tc-UV1"/>
+                            <constraint firstItem="dnf-Cf-cEg" firstAttribute="trailing" secondItem="QfE-aN-0J1" secondAttribute="trailing" id="Vz0-87-iPB"/>
+                            <constraint firstItem="QfE-aN-0J1" firstAttribute="top" secondItem="dnf-Cf-cEg" secondAttribute="top" id="Yez-Xr-wfL"/>
+                            <constraint firstAttribute="trailing" secondItem="Amf-D9-9Ua" secondAttribute="trailing" constant="146" id="hJl-gb-gRO"/>
+                            <constraint firstItem="Amf-D9-9Ua" firstAttribute="top" secondItem="QfE-aN-0J1" secondAttribute="bottom" id="yST-2n-38c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dnf-Cf-cEg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="8IH-A3-bMj"/>
+                    <connections>
+                        <outlet property="scrollView" destination="QfE-aN-0J1" id="A25-vr-hn9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yd-PN-FNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="372"/>
+            <point key="canvasLocation" x="712.79999999999995" y="371.96401799100454"/>
         </scene>
         <!--Item-->
         <scene sceneID="3hW-fj-g4e">
@@ -46,7 +72,7 @@
         <!--Item 1-->
         <scene sceneID="gER-rG-2Hz">
             <objects>
-                <viewController id="Qfz-e0-A6T" customClass="ViewController" customModule="myHabit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qfz-e0-A6T" customClass="TopViewController" customModule="myHabit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e9i-FI-3RB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
