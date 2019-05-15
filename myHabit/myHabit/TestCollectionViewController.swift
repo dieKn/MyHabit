@@ -9,36 +9,45 @@
 import UIKit
 
 class TestCollectionViewController: UIViewController,UICollectionViewDelegate,  UICollectionViewDataSource {
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var subView: UIView!
+    
+    let items: [CGFloat] = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
+    let reuseIdentifier = "reuseIdentifier"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        subView.frame.origin = CGPoint(x: 50.0, y: 100.0)
-        subView.layer.borderColor = UIColor.black.cgColor
-        subView.layer.borderWidth = 2.0
-        let rectView = UIView(frame: CGRect(x: 10.0, y: 10.0, width: 50.0, height: 50.0))
-        rectView.backgroundColor = .lightGray
-        rectView.layer.cornerRadius = 8.0
-        subView.addSubview(rectView)
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.allowsSelection = true
     }
 
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         
         // 分かりやすいように背景色を青に
-        cell.backgroundColor = UIColor.blue
-        
+        cell.contentView.layer.borderColor = UIColor.black.cgColor
+        cell.contentView.layer.borderWidth = items[indexPath.row]
+        let bgView = UIView()
+        bgView.backgroundColor = .lightGray
+        cell.selectedBackgroundView = bgView
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5;
+        return items.count;
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let alertController = UIAlertController(
+            title: nil,
+            message: "ボーダーの太さは\(items[indexPath.row])です",
+            preferredStyle: .alert
+        )
+        alertController.addAction(
+            UIAlertAction(title: "OK", style: .default, handler: nil)
+        )
+        present(alertController, animated: true, completion: nil)
+    }
 
 }
