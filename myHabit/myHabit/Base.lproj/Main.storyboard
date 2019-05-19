@@ -84,8 +84,8 @@
                                     <constraint firstAttribute="height" constant="8" id="TEG-od-Yea"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDp-Qb-QGt">
-                                <rect key="frame" x="0.0" y="28" width="375" height="112"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDp-Qb-QGt">
+                                <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aR7-FC-8hU">
                                         <rect key="frame" x="0.0" y="8" width="375" height="45"/>
@@ -141,41 +141,25 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-sS-dub">
                                         <rect key="frame" x="6" y="56" width="363" height="36"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yd1-lg-rWc">
-                                                <rect key="frame" x="-119" y="0.0" width="600" height="36"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="600" id="Bgc-TV-dvR"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6XH-NC-37E">
-                                                    <size key="itemSize" width="50" height="50"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Yhu-Gw-zJy">
-                                                        <rect key="frame" x="0.0" y="-7" width="50" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </view>
-                                                    </collectionViewCell>
-                                                </cells>
-                                            </collectionView>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ern-EY-jsx">
+                                                <rect key="frame" x="0.0" y="0.0" width="363" height="36"/>
+                                            </scrollView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="yd1-lg-rWc" firstAttribute="top" secondItem="8ot-sS-dub" secondAttribute="top" id="1XO-gb-AhF"/>
-                                            <constraint firstAttribute="bottom" secondItem="yd1-lg-rWc" secondAttribute="bottom" id="AEd-hl-fey"/>
-                                            <constraint firstItem="yd1-lg-rWc" firstAttribute="centerX" secondItem="8ot-sS-dub" secondAttribute="centerX" id="ATI-vg-m6p"/>
+                                            <constraint firstItem="Ern-EY-jsx" firstAttribute="centerX" secondItem="8ot-sS-dub" secondAttribute="centerX" id="6Qr-xT-Q3q"/>
+                                            <constraint firstItem="Ern-EY-jsx" firstAttribute="top" secondItem="8ot-sS-dub" secondAttribute="top" id="Afa-bF-cLg"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ern-EY-jsx" secondAttribute="bottom" id="GpW-c0-ByR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ern-EY-jsx" secondAttribute="trailing" id="cCq-sp-Bxm"/>
+                                            <constraint firstItem="Ern-EY-jsx" firstAttribute="centerX" secondItem="8ot-sS-dub" secondAttribute="centerX" id="fGi-jT-bwg"/>
+                                            <constraint firstItem="Ern-EY-jsx" firstAttribute="leading" secondItem="8ot-sS-dub" secondAttribute="leading" id="kXC-s0-1eA"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="8ot-sS-dub" firstAttribute="leading" secondItem="TDp-Qb-QGt" secondAttribute="leading" constant="6" id="3dl-I9-9bU"/>
+                                    <constraint firstItem="8ot-sS-dub" firstAttribute="centerX" secondItem="TDp-Qb-QGt" secondAttribute="centerX" id="64W-Ms-roD"/>
                                     <constraint firstAttribute="bottom" secondItem="8ot-sS-dub" secondAttribute="bottom" id="AQk-vj-kUb"/>
                                     <constraint firstItem="aR7-FC-8hU" firstAttribute="leading" secondItem="TDp-Qb-QGt" secondAttribute="leading" id="dj1-2e-uuc"/>
                                     <constraint firstAttribute="bottom" secondItem="aR7-FC-8hU" secondAttribute="bottom" constant="39" id="loJ-Uu-TAh"/>
@@ -183,6 +167,14 @@
                                     <constraint firstAttribute="trailing" secondItem="aR7-FC-8hU" secondAttribute="trailing" id="tzJ-8p-F8d"/>
                                     <constraint firstItem="aR7-FC-8hU" firstAttribute="top" secondItem="TDp-Qb-QGt" secondAttribute="topMargin" id="uhX-Q3-Klp"/>
                                     <constraint firstAttribute="trailing" secondItem="8ot-sS-dub" secondAttribute="trailing" constant="6" id="xmn-hT-HQ1"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYy-N6-xEU">
+                                <rect key="frame" x="137" y="120" width="100" height="3"/>
+                                <color key="backgroundColor" red="0.099105297939482861" green="0.5192631258474425" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="hAT-Kp-EOS"/>
+                                    <constraint firstAttribute="width" constant="100" id="iyr-dj-1Rf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -196,12 +188,15 @@
                             <constraint firstItem="TDp-Qb-QGt" firstAttribute="leading" secondItem="wt8-SP-IrI" secondAttribute="leading" id="PLF-mj-LAX"/>
                             <constraint firstItem="AeN-Gf-26i" firstAttribute="trailing" secondItem="wt8-SP-IrI" secondAttribute="trailing" id="THk-kj-4df"/>
                             <constraint firstItem="TDp-Qb-QGt" firstAttribute="trailing" secondItem="wt8-SP-IrI" secondAttribute="trailing" id="Zps-tf-T2N"/>
+                            <constraint firstItem="gYy-N6-xEU" firstAttribute="centerX" secondItem="TDp-Qb-QGt" secondAttribute="centerX" id="cVH-Xh-mri"/>
+                            <constraint firstItem="gYy-N6-xEU" firstAttribute="centerX" secondItem="e9i-FI-3RB" secondAttribute="centerX" id="laz-Mm-iMI"/>
+                            <constraint firstItem="gYy-N6-xEU" firstAttribute="top" secondItem="TDp-Qb-QGt" secondAttribute="bottom" id="riU-2V-hfQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AeN-Gf-26i"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="BaW-8A-I1H"/>
                     <connections>
-                        <outlet property="collectionView" destination="yd1-lg-rWc" id="oiQ-fz-ENq"/>
+                        <outlet property="scrollView" destination="Ern-EY-jsx" id="eeM-3X-i3y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALp-wR-dqj" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,49 +8,78 @@
 
 import UIKit
 
-class TopViewController: UIViewController, UICollectionViewDelegate {
+class TopViewController: UIViewController, UIScrollViewDelegate {
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var scrollView: UIScrollView!
+    var didPrepareMenu = false
+    let tabLabelWidth:CGFloat = 100
+    
+    override func viewDidLayoutSubviews() {
+        
+        // viewDidLayoutSubviewsは複数回呼ばれるため
+        if didPrepareMenu {return}
+        didPrepareMenu = true
+        
+        // scrollViewのDelegateを指定
+        scrollView.delegate = self
         let titles = ["月","火","水","木","金","土","日"]
         
+        let tabLabelHeight:CGFloat = scrollView.frame.height
         
-        let tabLabelWidth:CGFloat = 70
-        let tabLabelHeight:CGFloat = collectionView.frame.height
+        //右端にダミーのUILabelを置くことで
+        //一番右のタブもセンターに持ってくることが出来ます
+        let dummyLabelWidth = scrollView.frame.size.width/2 - tabLabelWidth/2
+        let headDummyLabel = UILabel()
+        headDummyLabel.frame = CGRect(x:0, y:0, width:dummyLabelWidth, height:tabLabelHeight)
+        scrollView.addSubview(headDummyLabel)
         
-        var originX:CGFloat = 0
+        // ダミー分ずらす？
+        var originX:CGFloat = dummyLabelWidth
         for title in titles {
             let label = UILabel()
             label.textAlignment = .center
             label.frame = CGRect(x:originX, y:0, width:tabLabelWidth, height:tabLabelHeight)
             label.text = title
-            collectionView.addSubview(label)
+            scrollView.addSubview(label)
             originX += tabLabelWidth
-            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        }
+        let tailLabel = UILabel()
+        tailLabel.frame = CGRect(x:originX, y:0, width:dummyLabelWidth, height:tabLabelHeight)
+        scrollView.addSubview(tailLabel)
+        originX += dummyLabelWidth
+        
+        //ここまでの処理でスクロールでラベルを真ん中まで持ってこれるようにする
+        scrollView.contentSize = CGSize(width:originX, height:tabLabelHeight)
+        
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        guard scrollView == self.scrollView else {
+            print("ガードしました！")
+            return
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
+        let index = Int((scrollView.contentOffset.x + tabLabelWidth/2) / tabLabelWidth)
+        let x = index * 100
+        UIView.animate(withDuration: 0.3,animations: {
+            scrollView.contentOffset = CGPoint(x:x, y:0)
+        })
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard scrollView == self.scrollView else {
+            print("ガードしました2！")
+            return
+        }
+        let index = Int((scrollView.contentOffset.x + tabLabelWidth/2) / tabLabelWidth)
+        let x = index * 100
+        UIView.animate(withDuration: 1.0, animations: {
+            scrollView.contentOffset = CGPoint(x:x, y:0)
+        })
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    private func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as UICollectionViewCell
-        
-        // 分かりやすいように背景色を青に
-        cell.backgroundColor = UIColor.blue
-        
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5;
-    }
-    
-    
 }
 
