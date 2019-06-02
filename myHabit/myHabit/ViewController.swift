@@ -8,12 +8,70 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var scrollView: UIScrollView!
     var didPrepareMenu = false
     let tabLabelWidth:CGFloat = 100
     
+    var calendarCollection : UICollectionView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width:50, height:50)
+        layout.sectionInset = UIEdgeInsetsMake(16, 16, 32, 16)
+        
+        layout.scrollDirection = .horizontal
+        calendarCollection = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        
+        let screenWidth:CGFloat = view.frame.size.width
+        let screenHeight:CGFloat = view.frame.size.height
+        
+        calendarCollection.frame = CGRect(x:0, y:screenHeight/2, width:screenWidth, height:50)
+        
+    calendarCollection.register(CustomUICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+        
+        calendarCollection.backgroundColor = UIColor.clear
+        
+        calendarCollection.delegate = self
+        calendarCollection.dataSource = self
+        
+        self.view.addSubview(calendarCollection)
+    }
+    
+    /*
+     Cellが選択された際に呼び出される
+     */
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            cell.contentView.backgroundColor = .blue
+            
+            print("Num: \(indexPath.row)")
+        }
+        print("Num: \(indexPath.row)")
+        
+    }
+    
+    
+    /*
+     Cellの総数を返す
+     */
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    /*
+     Cellに値を設定する
+     */
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell : CustomUICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! CustomUICollectionViewCell
+        cell.textLabel?.text = indexPath.row.description
+        return cell
+    }
+
     
     override func viewDidLayoutSubviews() {
         if didPrepareMenu { return }
