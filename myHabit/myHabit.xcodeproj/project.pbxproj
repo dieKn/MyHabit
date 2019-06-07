@@ -14,6 +14,7 @@
 		8317B9A2226C964D00293E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8317B9A1226C964D00293E53 /* Assets.xcassets */; };
 		8317B9B0226C964E00293E53 /* myHabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317B9AF226C964E00293E53 /* myHabitTests.swift */; };
 		8317B9BB226C964E00293E53 /* myHabitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8317B9BA226C964E00293E53 /* myHabitUITests.swift */; };
+		832E4E9422AA9A0700213C7A /* addHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832E4E9322AA9A0700213C7A /* addHabitViewController.swift */; };
 		839DAF71228C51690043A2F3 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DAF70228C51690043A2F3 /* TopViewController.swift */; };
 		83BF716A229D75A6001CFA0A /* CustomUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF7169229D75A6001CFA0A /* CustomUICollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		8317B9B6226C964E00293E53 /* myHabitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myHabitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8317B9BA226C964E00293E53 /* myHabitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHabitUITests.swift; sourceTree = "<group>"; };
 		8317B9BC226C964E00293E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		832E4E9322AA9A0700213C7A /* addHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addHabitViewController.swift; sourceTree = "<group>"; };
 		839DAF70228C51690043A2F3 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		83BF7169229D75A6001CFA0A /* CustomUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				8317B999226C964D00293E53 /* ViewController.swift */,
 				839DAF70228C51690043A2F3 /* TopViewController.swift */,
 				8317B99B226C964D00293E53 /* Main.storyboard */,
+				832E4E9322AA9A0700213C7A /* addHabitViewController.swift */,
 				83BF7169229D75A6001CFA0A /* CustomUICollectionViewCell.swift */,
 				8317B9A1226C964D00293E53 /* Assets.xcassets */,
 				8317B9A6226C964D00293E53 /* Info.plist */,
@@ -269,6 +272,7 @@
 				8317B99A226C964D00293E53 /* ViewController.swift in Sources */,
 				8317B9A0226C964D00293E53 /* myHabit.xcdatamodeld in Sources */,
 				8317B998226C964D00293E53 /* AppDelegate.swift in Sources */,
+				832E4E9422AA9A0700213C7A /* addHabitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
